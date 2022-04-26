@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.counter{
+    text-align: center;
+    transition: transform 0.3s ease-out;
+}
+
+.counter.hide {
+    transform: scale(0);
+}
+
+.nums {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.nums > span {
+    position: absolute;
+    font-size: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
+    transform-origin: bottom center;
+    color: #006E7F;
+}
+
+.nums > span.active {
+    animation: animate 1.5s ease-in-out;
+}
+
+h2 {
+    margin: 0;
+}
+
+.final {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.5rem;
+    transform: scale(0);
+    transition: transform 0.3s ease-out;
+}
+
+.final.show {
+    transform: scale(1);
+}
+
+.replay {
+    cursor: pointer;
+    border: none;
+    background-color: #F8CB2E;
+    padding: 5px 10px;
+}
+
+@keyframes animate {
+    0% {
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+
+    20% {
+        transform: translate(-50%, -50%) rotate(-20deg);
+    }
+
+    40% {
+        transform: translate(-50%, -50%) rotate(10deg);
+    }
+
+    60%, 80% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(-180deg);
+    }
+}
